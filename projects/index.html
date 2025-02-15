@@ -75,6 +75,10 @@
                 <a class="nav-link" href="/blog/">blog</a>
               </li>
 
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">cv</a>
+              </li>
+
               <!-- Other pages -->
               <li class="nav-item active">
                 <a class="nav-link" href="/projects/">projects<span class="sr-only">(current)</span></a>
@@ -101,167 +105,273 @@
           <header class="post-header">
             <h1 class="post-title">projects</h1>
             <br>
-            <p >My collection primarily focuses on <b>artificial intelligence of things (AIoT), computer vision (CV),</b> and <b>robotics. </b></p>
+            <p >My projects primarily lies in <b>Computer Vision, AIoT,</b> and <b>Robotics. </b></p>
           </header>
 
           <article>
-            <!-- pages/projects.md -->
-<div class="projects">
-  <!-- Display categorized projects -->
-  <h2 class="category"> </h2>
-  <!-- Generate cards for each project -->
-  <div class="grid">
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/1_project/">
-      <div class="card hoverable">
-<figure>
+                          <!-- pages/projects.md -->
+              <div class="projects">
+                <!-- Display categorized projects -->
+                <h2 class="category"> projects</h2>
+                <!-- Generate cards for each project -->
+                <div class="grid">
+              <!-- _includes/projects.html -->
+              <div class="grid-sizer"></div>
 
-  <picture>
-    <!-- <source media="(max-width: 480px)" srcset="/assets/img/7-480.webp" />
-    <source media="(max-width: 800px)" srcset="/assets/img/7-800.webp" />
-    <source media="(max-width: 1400px)" srcset="/assets/img/7-1400.webp" />
-    -->
+              <style>
+                /* Ensure the <a> element is a block-level element */
+                  a {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                }
 
-    <!-- Fallback to the original file -->
-    <!-- <img src="/assets/img/robotics_preview.jpeg" alt="project thumbnail"> -->
+                /* Make sure the <figure> fills its parent <a> */
+                figure {
+                  margin: 0;
+                  padding: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .card {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex; /* Use flex to center the content */
+                flex-direction: column; /* Ensure the title is centered in the card */
+                justify-content: center;
+                align-items: center;
+                background-color: var(--global-card-bg-color);
+                transition: all 0.3s ease;
+              }
+
+                /* The image-container should fill the entire space of the figure */
+                .image-container {
+                  position: relative;
+                  width: 100% !important;
+                  height: 100% !important;
+                  background-size: cover;
+                  background-position: center;
+                  display: block;
+                  transition: opacity 0.3s ease;
+                }
+
+                /* Hide the image as we use background-image */
+                .image-container img {
+                  display: none;
+                }
+
+                /* Title that will appear over the image */
+                .card-title {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  margin: 0;
+                  transform: translate(-50%, -50%);
+                  color: transparent; /* Initially set the text to be invisible */
+                  font-size: 1.4rem;
+                  opacity: 0;
+                  transition: opacity 0.3s ease, color 0.3s ease;
+                  padding: 0;
+                  white-space: normal;
+                  word-wrap: break-word;
+                  width: 100%;
+                  padding: 0 20px;
+                  text-align: center;
+                }
+
+                /* Create a black overlay using the ::before pseudo-element */
+                .card .image-container::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  padding: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: black;
+                  opacity: 0; /* Initially invisible */
+                  transition: opacity 0.3s ease; /* Transition for the overlay effect */
+                }
+
+                /* Hover effect: change image opacity to darken it and text color to white */
+                .card:hover .image-container::before {
+                  opacity: 0.6; /* Make the black overlay visible */
+                }
+
+                .card:hover .card-title {
+                  opacity: 0.8; /* Show the title */
+                  color: white !important; /* Change the text color to white */
+                }
+
+                .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 每行 3 个卡片 */
+                gap: 20px; /* 卡片间距 */
+                margin-top: 20px; /* 可根据需要调整顶部间距 */
+              }
+
+              .grid-item {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                background-color: #f4f4f4; /* 如果需要背景色，可以设置 */
+                overflow: hidden;
+              }
 
 
-    <div class="image-container">
-      <img src="/assets/img/aiot_preview.jpeg" alt="project thumbnail">
-    </div>
-    
-    <style>
-      .image-container {
-          width: 100%;
-          height: 180px;
-          overflow: hidden;
-          position: relative;
-      }
-      
-      .image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-      }
-    </style>
-  </picture>
 
-</figure>
+              </style>
 
-        <div class="card-body">
-          <h2 class="card-title text-lowercase">AIoT</h2>
-          <!-- <p class="card-text">Smart solutions, endless possibilities</p> -->
-          <!-- <br> -->
-          <div class="row ml-1 mr-1 p-0">
+              <div class="grid-item">
+                <a href="/projects/1_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/1_project_bblab_ra_1.jpg');">
+                        <h4 class="card-title">AIoT for Vision-based Livestock Monitoring</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+
+              <div class="grid-item">
+                <a href="/projects/2_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/2_project_advantech.jpeg');">
+                        <h4 class="card-title">An Embedded AI Alarm System in Retail</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+
+              <div class="grid-item">
+                <a href="/projects/1_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/3_project_google_hps.jpg');">
+                        <h4 class="card-title">Greenify: Your Recycle Mentor</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+              
+
+              <div class="grid-item">
+                <a href="/projects/1_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/7_project_field_robot_2022.jpg');">
+                        <h4 class="card-title">ARUI-II: An Intelligent Vision-Driven Field Robot</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item">
+                <a href="/projects/1_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/6_project_field_robot_2021_3.jpeg');">
+                        <h4 class="card-title">ARUI-I: An Intelligent Vision-Driven Field Robot</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item">
+                <a href="/projects/1_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/8_project_mechatronics.jpg');">
+                        <h4 class="card-title">An Agile Vacuum Robot</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item">
+                <a href="/projects/7_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/9_project_dlcv_diffusion.jpeg');">
+                        <h4 class="card-title">Personalized Styles and Characters in Text-to-Image Diffusion</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+              <div class="grid-item">
+                <a href="/projects/8_project/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/4_project_ntu_course_project.jpeg');">
+                        <h4 class="card-title">Course Projects at NTU</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
+
+
+            </div>
           </div>
+
+          </article>
+
         </div>
-      </div>
-    </a>
-</div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/2_project/">
-      <div class="card hoverable">
-<figure>
-
-  <picture>
-    <!-- <source media="(max-width: 480px)" srcset="/assets/img/7-480.webp" />
-    <source media="(max-width: 800px)" srcset="/assets/img/7-800.webp" />
-    <source media="(max-width: 1400px)" srcset="/assets/img/7-1400.webp" />
-    -->
-
-    <!-- Fallback to the original file -->
-    <!-- <img src="/assets/img/robotics_preview.jpeg" alt="project thumbnail"> -->
 
 
-    <div class="image-container">
-      <img src="/assets/img/cv_preview.png" alt="project thumbnail">
-    </div>
-    
-    <style>
-      .image-container {
-          width: 100%;
-          height: 180px;
-          overflow: hidden;
-          position: relative;
-      }
-      
-      .image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-      }
-    </style>
-  </picture>
 
-</figure>
-
-        <div class="card-body">
-          <h2 class="card-title text-lowercase">Computer Vision</h2>
-          <!-- <p class="card-text">From pixels to insights</p> -->
-          <!-- <br> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
-</div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/3_project/">
-      <div class="card hoverable">
-<figure>
-
-  <picture>
-    <!-- <source media="(max-width: 480px)" srcset="/assets/img/7-480.webp" />
-    <source media="(max-width: 800px)" srcset="/assets/img/7-800.webp" />
-    <source media="(max-width: 1400px)" srcset="/assets/img/7-1400.webp" />
-    -->
-
-    <!-- Fallback to the original file -->
-    <!-- <img src="/assets/img/robotics_preview.jpeg" alt="project thumbnail"> -->
+        <div class="post">
 
 
-    <div class="image-container">
-      <img src="/assets/img/robotics_preview.jpeg" alt="project thumbnail">
-    </div>
-    
-    <style>
-      .image-container {
-          width: 100%;
-          height: 180px;
-          overflow: hidden;
-          position: relative;
-      }
-      
-      .image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-      }
-    </style>
-  </picture>
+          <article>
+                          <!-- pages/projects.md -->
+              <div class="projects">
+                <!-- Display categorized projects -->
+                <h2 class="category">publications</h2>
+                <!-- Generate cards for each project -->
+                <div class="grid">
+              <!-- _includes/projects.html -->
+              <div class="grid-sizer"></div>
 
-</figure>
+              <div class="grid-item">
+                <a href="/projects/1_publication/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/1_publication_ra_1.png');">
+                        <h4 class="card-title">An Efficient AIoT Framework for Image-Based Behavior Monitoring
+                        </h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
 
-        <div class="card-body">
-          <h2 class="card-title text-lowercase">robotics</h2>
-          <!-- <p class="card-text">My robotics playground</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
-</div>
-  </div>
-</div>
+
+              <div class="grid-item">
+                <a href="/projects/2_publication/">
+                  <div class="card hoverable">
+                    <figure>
+                      <div class="image-container" style="background-image: url('/assets/img/5_project_bblab_ur.jpeg');">
+                        <h4 class="card-title">Behavior Recognition and Analysis in Dairy Calves</h4>
+                      </div>
+                    </figure>
+                  </div>
+                </a>
+              </div>
 
           </article>
 
@@ -269,13 +379,6 @@
 
     </div>
 
-    <!-- Footer -->    
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        © Copyright 2022 Polin  Chen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
-
-      </div>
-    </footer>
 
     <!-- JavaScripts -->
     <!-- jQuery -->
