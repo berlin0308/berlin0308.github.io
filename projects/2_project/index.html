@@ -110,7 +110,52 @@
 
           <header class="post-header">
             <h2 class="post-title">An Embedded Vision-based Alarm System in Retail</h2>
-            <h5 class="slab-text"><a href="/assets/pdf/Advantech_Presentation.pdf" target="_blank" rel="noopener noreferrer">Presentation</a> • <a href="/assets/mp4/Advantech_Demo.mp4" target="_blank" rel="noopener noreferrer">Demo</a></h5>
+            <!-- <h5 class="slab-text"><a href="/assets/pdf/Advantech_Presentation.pdf" target="_blank" rel="noopener noreferrer">Presentation</a> • <a href="/assets/mp4/Advantech_Demo.mp4" target="_blank" rel="noopener noreferrer">Demo</a></h5> -->
+            <h5 class="slab-text">
+              <a href="javascript:void(0);" onclick="togglePDF()">Presentation</a> • 
+              <a href="javascript:void(0);" onclick="toggleVideo()">Demo</a>
+            </h5>
+            
+            <div id="pdfContainer" style="display:none;">
+              <iframe src="/assets/pdf/Advantech_Presentation.pdf" width="800" height="500">
+                Your browser does not support PDFs. Please download the PDF to view it: 
+                <a href="/assets/pdf/Advantech_Presentation.pdf">Download PDF</a>.
+              </iframe>
+            </div>
+            
+            <div id="videoContainer" style="display:none;">
+              <video width="640" height="360" controls preload="auto">
+                <source src="/assets/mp4/Advantech_Demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
+            <script>
+              function togglePDF() {
+                var pdfContainer = document.getElementById('pdfContainer');
+                var videoContainer = document.getElementById('videoContainer');
+                
+                if (pdfContainer.style.display === 'none') {
+                  pdfContainer.style.display = 'block';
+                  videoContainer.style.display = 'none'; // Hide video if it's visible
+                } else {
+                  pdfContainer.style.display = 'none';
+                }
+              }
+            
+              function toggleVideo() {
+                var videoContainer = document.getElementById('videoContainer');
+                var pdfContainer = document.getElementById('pdfContainer');
+                
+                if (videoContainer.style.display === 'none') {
+                  videoContainer.style.display = 'block';
+                  pdfContainer.style.display = 'none'; // Hide PDF if it's visible
+                } else {
+                  videoContainer.style.display = 'none';
+                }
+              }
+            </script>
+
             <br>
             <p>This project was inspired by the retail loss caused by self-checkout systems nowadays. With this system, abnormal behaviors in retail stores can be automatically detected and recorded.</p>
             <ul>
