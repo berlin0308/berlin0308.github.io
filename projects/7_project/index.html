@@ -29,7 +29,7 @@
 
     <!-- Styles -->
     
-    <link rel="shortcut icon" href="/assets/img/bblab_icon.jpeg" > 
+    <link rel="shortcut icon" href="/assets/img/icon.png" > 
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://spencerpao.github.io/projects/1_project/">
@@ -75,6 +75,10 @@
                 <a class="nav-link" href="/blog/">blog</a>
               </li>
 
+              <li class="nav-item ">
+                <a class="nav-link" href="/cv/">cv</a>
+              </li>
+
               <!-- Other pages -->
               <li class="nav-item ">
                 <a class="nav-link" href="/projects/">projects</a>
@@ -101,9 +105,30 @@
           <header class="post-header">
             <h2 class="post-title">Personalized Styles and Characters in Text-to-Image Diffusion
             </h2>
-            <p class="post-description">#Diffusion Models #Stable Diffusion #Vision-Langauge Models (VLMs)</p>
-            <p><a href="https://github.com/berlin0308/Multi-Concept-Text-to-Image-Diffusion" target="_blank" rel="noopener noreferrer"><b>Code</b></a> • <a href="/assets/pdf/DLCV_FP_Poster.pdf" target="_blank" rel="noopener noreferrer"><b>Poster</b></a> • <a href="https://nihukat.github.io/Concept-Conductor/" target="_blank" rel="noopener noreferrer"><b>Reference (Concept Conductor)</b></a> • <a href="https://www.cs.cmu.edu/~custom-diffusion/" target="_blank" rel="noopener noreferrer"><b>Reference (Custom Diffusion)</b></a></p>
+            <h5 class="slab-text"><a href="https://github.com/berlin0308/Multi-Concept-Text-to-Image-Diffusion" target="_blank" rel="noopener noreferrer">Code</a> • <a href="javascript:void(0);" onclick="togglePDF()">Poster</a> • <a href="https://nihukat.github.io/Concept-Conductor/" target="_blank" rel="noopener noreferrer">Reference (Concept Conductor)</a> • <a href="https://www.cs.cmu.edu/~custom-diffusion/" target="_blank" rel="noopener noreferrer">Reference (Custom Diffusion)</a></h5>
+            <br>
           </header>
+
+          <div id="pdfContainer" style="display:none;">
+            <iframe src="/assets/pdf/DLCV_Poster.pdf" width="800" height="600">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/DLCV_Poster.pdf">Download PDF</a>.
+            </iframe>
+          </div>
+
+          <script>
+            function togglePDF() {
+              var pdfContainer = document.getElementById('pdfContainer');
+              var videoContainer = document.getElementById('videoContainer');
+              
+              if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+                videoContainer.style.display = 'none'; // Hide video if it's visible
+              } else {
+                pdfContainer.style.display = 'none';
+              }
+            }
+          </script>
 
           <article>
             <h2>Intro</h2>
