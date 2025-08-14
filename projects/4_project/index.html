@@ -110,8 +110,30 @@
         
         <header class="post-header">
           <h2 class="post-title">ARUI: Vision-Driven Field Robots</h2>
-          <h5 class="slab-text"><a href="https://github.com/berlin0308/2021-Field-Robot-ARUI-I" target="_blank" rel="noopener noreferrer">ARUI-I Code</a> • <a href="https://github.com/berlin0308/2022-Field-Robot-ARUI-II" target="_blank" rel="noopener noreferrer">ARUI-II Code</a></h5>
-          
+          <h5 class="slab-text"><a href="javascript:void(0);" onclick="toggleVideo()">Demo</a> • <a href="https://github.com/berlin0308/2021-Field-Robot-ARUI-I" target="_blank" rel="noopener noreferrer">ARUI-I Code</a> • <a href="https://github.com/berlin0308/2022-Field-Robot-ARUI-II" target="_blank" rel="noopener noreferrer">ARUI-II Code</a></h5>
+          <div id="videoContainer" style="display:none;">
+            <video width="480" height="360" controls preload="auto">
+              <source src="/assets/mp4/Field_Robot_Demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <script>
+            function toggleVideo() {
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              
+              if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+                pdfContainer.style.display = 'none'; // Hide PDF if it's visible
+              } else {
+                videoContainer.style.display = 'none';
+              }
+            }
+          </script>
+
+
+
           <br>
           <p>In 2021, we launched our robotics project "ARUI-I" to compete in the Field Robot Competition at National Pingtung University of Science and Technology (NPUST). Motivated to do better, we worked hard and developed "ARUI-II" the following year, which helped us achieve great success at the 2022 Field Robot Competition hosted by National Taiwan University (NTU).
           </p>
