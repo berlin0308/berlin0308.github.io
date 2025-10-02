@@ -32,7 +32,7 @@
     <link rel="shortcut icon" href="/assets/img/icon.png" > 
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://berlin0308.github.io/projects/2_project/">
+    <link rel="canonical" href="https://berlin0308.github.io/projects/1_project/">
     
     <!-- Dark Mode -->
     
@@ -103,7 +103,7 @@
      <div class="container-fluid p-0">
       <!-- Hero Section with Background Image -->
       <div class="hero-section" style="
-        background-image: url('/assets/img/1_project_bblab_ra_1.jpg');
+        background-image: url('/assets/img/1_project_bblab_ra_6.jpeg');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -121,8 +121,8 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(0, 0, 0, 0.4);
-          filter: grayscale(100%);
+          /* background: rgba(0, 0, 0, 0.1);
+          filter: grayscale(10%); */
         "></div>
         
         <!-- Content -->
@@ -284,26 +284,64 @@
           <!-- Project Description -->
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
             <strong>Credit:</strong>
-            Me, Rui-Yuan Liao, Prof. Ta-Te Lin, Dept of Biomechatronics Engineering, Dept of Animal Science and Technology, National Taiwan University, Experimental Dairy Farm
+            Me, R. Y. Liao, Prof. J. T. Hsu, Prof. T. T. Lin, Dept of Biomechatronics Engineering, Dept of Animal Science and Technology, National Taiwan University, Experimental Dairy Farm
           </p>
           <br>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 30px;">What I've Done <a style="color: var(--global-theme-color);">in Engineering Words</a>:</h2>
+
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Architected Edge-Cloud ML System using <a style="color: var(--global-theme-color);">Flask</a> and <a style="color: var(--global-theme-color);">AWS (IoT Core, S3, Athena, QuickSight)</a>; built CI/CD pipeline with <a style="color: var(--global-theme-color);">GitHub Actions</a> for over-the-air (OTA) software updates and <a style="color: var(--global-theme-color);">IoT Core/MQTT</a> for automated performance profiling.
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Drove resource-constrained deployment on <a style="color: var(--global-theme-color);">Raspberry Pi</a> with <a style="color: var(--global-theme-color);">LiteRT/TFLite</a>; quantified performance tradeoffs across
+            inference optimization strategies, achieving <a style="color: var(--global-theme-color);">63% latency reduction</a> and <a style="color: var(--global-theme-color);">40% RAM cut</a> for real-time, low-power operation
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Delivered <a style="color: var(--global-theme-color);">QuickSight</a> reporting framework by collaborating with domain experts, <a style="color: var(--global-theme-color);">saving 84% operational labor overhead</a>
+            </b>
+            
+          </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Published research as 1-st author at top-tier bioengineering conference ISMAB 2024 (see <a href="/projects/1_publication" target="_blank" rel="noopener noreferrer">publication page</a>)
+            </b>
+          </p>
+          <hr>
+          <br>
           
-          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 30px;">The Beginning: AIoT for Livestock Monitoring</h2>
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 30px;">Motivation: AIoT for Livestock Monitoring</h2>
           
 
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
-            Our first major research project, known simply as the AIoT Livestock Monitoring System, was a comprehensive edge-to-cloud framework that monitored dairy cattle behavior using computer vision and IoT technologies. It was targeted at agricultural research and was used to demonstrate that embedding AI-powered behavior recognition within a distributed monitoring system can drastically increase data collection efficiency and accuracy in livestock management. It was an incredibly promising result that showed that real-time computer vision analysis could provide valuable insights into animal welfare and health.
+            <b>Monitoring  behaviors  in  dairy  cattle  is  crucial  for  efficient  livestock 
+            management and welfare enhancement, as variations in behavioral patterns often signal 
+            health issues.</b> Image-based behavior monitoring systems are non-invasive and suitable 
+            for automated dairy farming practices, while these intelligent systems require substantial 
+            computational  resources  to  process  consecutive  video  frames,  which  makes  it 
+            challenging to deploy behavioral recognition models on edge devices in dairy farms.
+            <br>
+            <br>
+            <b>Our  objective  is  to  develop  an  efficient AIoT  framework  for  image-based 
+            behavior monitoring system for dairy calves, which can reliably recognize behaviors with affordable computational demands.
+            </b>
           </p>
+          
 
+          <hr>
           <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">Building Efficient & Reliable AIoT Systems for Livestock Monitoring</h2>
 
 
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
-            Inspired by the need for automated livestock monitoring and the potential of edge computing in agriculture, we developed our comprehensive AIoT system deployed at NTU's experimental dairy farm. This system has been featured in multiple research publications and has been successfully monitoring cattle behavior for over a year. To read more about the specific technical implementation and system architecture, please read our paper presented at ISMAB 2023.
-          </p>
-
-          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
             Our AIoT system aims to improve livestock welfare and farm management efficiency by providing real-time behavioral analysis and health monitoring through computer vision and edge computing technologies. The system uses behavioral recognition algorithms to identify patterns in cattle movement, feeding behavior, and social interactions, providing farmers with immediate insights into animal health and wellbeing. By processing data at the edge and synchronizing with cloud services, our system is designed to help farmers make data-driven decisions and ensure optimal animal care through the power of AI and IoT.
+          </p>
+          <br>
+          <div class="ml-6 mr-6 max-w-screen-lg mx-auto text-center" style="display: flex; justify-content: center;">
+            <img src="/assets/img/1_project_bblab_ra_4.jpeg" style="max-width: 60%; opacity: 0.9;">
+          </div>
+          <p style="text-align: center; font-size: 1.1rem; font-weight: 400; line-height: 1.2; margin: 15px 0 25px 0; color: #666;">
+            System Overview
           </p>
 
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
@@ -313,81 +351,171 @@
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
             The computer vision and machine learning techniques used within our AIoT system were developed in collaboration with the Department of Animal Science and Technology at National Taiwan University. This collaboration provided us with deep domain expertise in livestock behavior, animal welfare standards, and practical farm management needs. Our partners advised us on which behavioral patterns are most indicative of health issues, what types of monitoring data are most valuable for farmers, and how to maximize both system reliability and practical utility within the unique context of agricultural environments.
           </p>
-
+          <hr>
           <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">...And More!</h2>
 
           <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
-            The techniques we have been developing for the AIoT Livestock Monitoring Project can be used in many ways to help farmers and researchers form better understanding of animal behavior and welfare. We're incredibly excited about the many directions we can take this project in to help more agricultural operations, and we know we've only just scratched the surface of what's possible with AI and IoT in agriculture. If you have any ideas or would like to collaborate, please contact us at polinnchen@gmail.com.
+            We are still exploring ways technologies that <b>help farmers take better care of their livestock,</b> and <b>researchers form better understanding of animal behavior and welfare.</b>
+            The systems has been deployed at NTU's experimental farm and has been scaled up to multi-device distributed systems.
+            We're incredibly excited about the many directions we can take this project in to help more agricultural operations, and we know we've only just scratched the surface of what's possible with AI and IoT in agriculture. If you have any ideas or would like to collaborate, please contact us at polinnchen@gmail.com.
           </p>
+          <hr>
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">Gallery</h2>
 
-          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">In This Project, I...</h2>
-
-          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
-            <b>- Architected Edge-Cloud ML System using Flask and AWS (IoT Core, S3, Athena); built CI/CD pipeline with GitHub Actions for over-the-air (OTA) software updates and IoT Core/MQTT for automated performance profiling.
-            </b>
-            </p>
-          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
-            <b>- Drove resource-constrained deployment on Raspberry Pi with LiteRT/TFLite; quantified performance tradeoffs across
-            inference optimization strategies, achieving 63% latency reduction and 40% RAM cut for real-time, low-power operation
-            </b>
-            </p>
-          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
-            <b>- Delivered QuickSight reporting framework by collaborating with domain experts, saving 84% operational labor overhead
-            </b>
-            
-          </p>
-          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
-            <b>- Published research as 1-st author at top-tier bioengineering conference ISMAB 2024 (see <a href="/projects/1_publication" target="_blank" rel="noopener noreferrer">publication page</a>)
-            </b>
-          </p>
+          
 
           <article>
             
             <br>
 
 
-            <div class="row">
-              <div class="col-sm mt-3 mt-md-0">
+            <div class="image-row" style="
+              display: flex;
+              width: 100vw;
+              margin-left: calc(-50vw + 50%);
+              gap: 0;
+            ">
+              <div class="image-col" style="flex: 1; position: relative;">
                 <a href="" target="_blank" rel="noopener noreferrer">
-                  <figure>
-          
-            <picture>
-              <img class="img-fluid rounded z-depth-1" src="/assets/img/1_project_bblab_ra_1.jpg" title="example image">
-            </picture>
-          
-          </figure>
-          
+                  <figure style="margin: 0; position: relative;">
+                    <picture>
+                      <img class="img-fluid" src="/assets/img/1_project_bblab_ra_1.jpg" title="example image" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                    <div class="image-overlay" style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgba(0, 0, 0, 0);
+                      transition: background 0.1s ease;
+                    "></div>
+                    <div class="image-caption" style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: 20px;
+                      right: 20px;
+                      color: white;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                      opacity: 0;
+                      transition: opacity 0.1s ease;
+                      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+                    ">
+                      System Installation
+                    </div>
+                  </figure>
                 </a>
               </div>
-              <div class="col-sm mt-3 mt-md-0">
+              <div class="image-col" style="flex: 1; position: relative;">
                 <a href="" target="_blank" rel="noopener noreferrer">
-                  <figure>
-          
-            <picture>
-              <img class="img-fluid rounded z-depth-1" src="/assets/img/1_project_bblab_ra_2.jpg" title="example image">
-            </picture>
-
+                  <figure style="margin: 0; position: relative;">
+                    <picture>
+                      <img class="img-fluid" src="/assets/img/1_project_bblab_ra_2.jpg" title="example image" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                    <div class="image-overlay" style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgba(0, 0, 0, 0);
+                      transition: background 0.1s ease;
+                    "></div>
+                    <div class="image-caption" style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: 20px;
+                      right: 20px;
+                      color: white;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                      opacity: 0;
+                      transition: opacity 0.1s ease;
+                      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+                    ">
+                      Barn Environment
+                    </div>
+                  </figure>
                 </a>
-
               </div>
-              <div class="col-sm mt-3 mt-md-0">
+              <div class="image-col" style="flex: 1; position: relative;">
                 <a href="" target="_blank" rel="noopener noreferrer">
-                  <figure>
-          
-            <picture>
-              <img class="img-fluid rounded z-depth-1" src="/assets/img/1_project_bblab_ra_3.jpg" title="example image">
-            </picture>
-          
-          
-          
+                  <figure style="margin: 0; position: relative;">
+                    <picture>
+                      <img class="img-fluid" src="/assets/img/1_project_bblab_ra_7.jpeg" title="example image" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                    <div class="image-overlay" style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgba(0, 0, 0, 0);
+                      transition: background 0.1s ease;
+                      "></div>
+                    <div class="image-caption" style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: 20px;
+                      right: 20px;
+                      color: white;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                      opacity: 0;
+                      transition: opacity 0.1s ease;
+                      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+                      ">
+                      Top-Down View
+                    </div>
+                  </figure>
+                </a>
+              </div>
+              <div class="image-col" style="flex: 1; position: relative;">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  <figure style="margin: 0; position: relative;">
+                    <picture>
+                      <img class="img-fluid" src="/assets/img/1_project_bblab_ra_3.jpg" title="example image" style="width: 100%; height: auto; display: block;">
+                    </picture>
+                    <div class="image-overlay" style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgba(0, 0, 0, 0);
+                      transition: background 0.1s ease;
+                    "></div>
+                    <div class="image-caption" style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: 20px;
+                      right: 20px;
+                      color: white;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 800;
+                      opacity: 0;
+                      transition: opacity 0.1s ease;
+                      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+                    ">
+                      Collected Image Data
+                    </div>
+                  </figure>
                 </a>
               </div>
           </div>
-          <p style="text-align: center; font-size: 1.3rem; font-weight: 400; line-height: 1.1; margin-bottom: 25px;">
-            (1) Embedded System Installation (2) Dairy Calf Barn at NTU's Experimental Dairy Farm (3) Top-Down Image Acquisition
-          </p>
-          
+        </div>
 
+            
+            <style>
+              .image-col:hover .image-caption {
+                opacity: 0.9 !important;
+              }
+            </style>
 
           </article>
 
