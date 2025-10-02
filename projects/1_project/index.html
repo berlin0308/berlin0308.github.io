@@ -73,21 +73,17 @@
 
               <!-- About -->
               <li class="nav-item ">
-                <a class="nav-link" href="/">about</a>
+                <a class="nav-link" href="/">About</a>
               </li>
               
-              <!-- Blog -->
+              <!-- CV -->
               <li class="nav-item ">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/cv/">CV</a>
               </li>
 
+              <!-- Projects -->
               <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-
-              <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/projects/">projects</a>
+                <a class="nav-link" href="/projects/">Projects</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -104,97 +100,249 @@
     </header>
 
      <!-- Content -->
-     <div class="container mt-5">
-      <!-- page.html -->
+     <div class="container-fluid p-0">
+      <!-- Hero Section with Background Image -->
+      <div class="hero-section" style="
+        background-image: url('/assets/img/1_project_bblab_ra_1.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 50vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <!-- Overlay with grayscale filter -->
+        <div class="hero-overlay" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          filter: grayscale(100%);
+        "></div>
+        
+        <!-- Content -->
+        <div class="hero-content text-left text-white" style="
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+          padding: 0 20px;
+        ">
+          <h4 class="hero-title" style="
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          color: white;
+        ">Research</h4>
+          <h3 class="hero-title" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">Building Edge-Cloud AIoT Systems for Vision-based Livestock Monitoring:
+            Collaborating with Dept. of Animal Science and Technology & NTU's Experimental Farm</h3>
+          <h3 class="hero-title" style="
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">#ML-Systems #Embedded-ML #AIoT</h3>
+
+          
+          
+          <style>
+            .hero-link:hover {
+              color: var(--global-theme-color) !important;
+            }
+            
+            @media (max-width: 768px) {
+              .hero-title {
+                font-size: 2.5rem !important;
+              }
+              .hero-links {
+                font-size: 2rem !important;
+              }
+              .hero-section {
+                background-attachment: scroll !important;
+              }
+            }
+            @media (max-width: 480px) {
+              .hero-title {
+                font-size: 2rem !important;
+              }
+              .hero-links {
+                font-size: 0.9rem !important;
+              }
+            }
+          </style>
+          
+          <div class="hero-links" style="
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: left;
+          ">
+            <a href="javascript:void(0);" onclick="togglePDF()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 0px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Paper |</a>
+            <a href="javascript:void(0);" onclick="togglePDF2()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 3px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Presentation |</a>
+            <a href="javascript:void(0);" onclick="toggleVideo()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 3px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="container mt-5">
         <div class="post">
+          <!-- PDF and Video Containers -->
+          <div id="pdfContainer" style="display:none;">
+            <iframe src="/assets/pdf/ISMAB_Paper.pdf" width="800" height="500">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/ISMAB_Paper.pdf">Download PDF</a>.
+            </iframe>
+          </div>
 
-          <header class="post-header">
-            <h2 class="post-title">AIoT for Vision-based Livestock Monitoring</h2>
-            <h5 class="slab-text">
-              <a href="javascript:void(0);" onclick="togglePDF()">Paper</a> • 
-              <a href="javascript:void(0);" onclick="togglePDF2()">Presentation</a> • 
-              <a href="javascript:void(0);" onclick="toggleVideo()">Demo</a>
-            </h5>
-            
-            <div id="pdfContainer" style="display:none;">
-              <iframe src="/assets/pdf/ISMAB_Paper.pdf" width="800" height="500">
-                Your browser does not support PDFs. Please download the PDF to view it: 
-                <a href="/assets/pdf/ISMAB_Paper.pdf">Download PDF</a>.
-              </iframe>
-            </div>
-
-            <div id="pdfContainer2" style="display:none;">
-              <iframe src="/assets/pdf/ISMAB_Presentation_Oral.pdf" width="800" height="500">
-                Your browser does not support PDFs. Please download the PDF to view it: 
-                <a href="/assets/pdf/ISMAB_Presentation_Oral.pdf">Download PDF</a>.
-              </iframe>
-            </div>
-            
-            <div id="videoContainer" style="display:none;">
-              <video width="640" height="360" controls preload="auto">
-                <source src="/assets/mp4/BBLab_Demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            
-            <script>
-              function togglePDF() {
-                var pdfContainer = document.getElementById('pdfContainer');
-                var videoContainer = document.getElementById('videoContainer');
-                
-                if (pdfContainer.style.display === 'none') {
-                  pdfContainer.style.display = 'block';
-                  videoContainer.style.display = 'none'; // Hide video if it's visible
-                } else {
-                  pdfContainer.style.display = 'none';
-                }
+          <div id="pdfContainer2" style="display:none;">
+            <iframe src="/assets/pdf/ISMAB_Presentation_Oral.pdf" width="800" height="500">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/ISMAB_Presentation_Oral.pdf">Download PDF</a>.
+            </iframe>
+          </div>
+          
+          <div id="videoContainer" style="display:none;">
+            <video width="640" height="360" controls preload="auto">
+              <source src="/assets/mp4/BBLab_Demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+          <script>
+            function togglePDF() {
+              var pdfContainer = document.getElementById('pdfContainer');
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              
+              if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+                videoContainer.style.display = 'none';
+                pdfContainer2.style.display = 'none';
+              } else {
+                pdfContainer.style.display = 'none';
               }
-              function togglePDF2() {
-                var pdfContainer = document.getElementById('pdfContainer2');
-                var videoContainer = document.getElementById('videoContainer');
-                
-                if (pdfContainer.style.display === 'none') {
-                  pdfContainer.style.display = 'block';
-                  videoContainer.style.display = 'none'; // Hide video if it's visible
-                } else {
-                  pdfContainer.style.display = 'none';
-                }
+            }
+            function togglePDF2() {
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              
+              if (pdfContainer2.style.display === 'none') {
+                pdfContainer2.style.display = 'block';
+                videoContainer.style.display = 'none';
+                pdfContainer.style.display = 'none';
+              } else {
+                pdfContainer2.style.display = 'none';
               }
-            
-              function toggleVideo() {
-                var videoContainer = document.getElementById('videoContainer');
-                var pdfContainer = document.getElementById('pdfContainer');
-                
-                if (videoContainer.style.display === 'none') {
-                  videoContainer.style.display = 'block';
-                  pdfContainer.style.display = 'none'; // Hide PDF if it's visible
-                } else {
-                  videoContainer.style.display = 'none';
-                }
+            }
+          
+            function toggleVideo() {
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              
+              if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+                pdfContainer.style.display = 'none';
+                pdfContainer2.style.display = 'none';
+              } else {
+                videoContainer.style.display = 'none';
               }
-            </script>
+            }
+          </script>
+
+          <!-- Project Description -->
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            <strong>Credit:</strong>
+            Me, Rui-Yuan Liao, Prof. Ta-Te Lin, Dept of Biomechatronics Engineering, Dept of Animal Science and Technology, National Taiwan University, Experimental Dairy Farm
+          </p>
+          <br>
+          
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 30px;">The Beginning: AIoT for Livestock Monitoring</h2>
+          
+
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            Our first major research project, known simply as the AIoT Livestock Monitoring System, was a comprehensive edge-to-cloud framework that monitored dairy cattle behavior using computer vision and IoT technologies. It was targeted at agricultural research and was used to demonstrate that embedding AI-powered behavior recognition within a distributed monitoring system can drastically increase data collection efficiency and accuracy in livestock management. It was an incredibly promising result that showed that real-time computer vision analysis could provide valuable insights into animal welfare and health.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">Building Efficient & Reliable AIoT Systems for Livestock Monitoring</h2>
 
 
-            <br>
-            <p>This research project was presented at the ISMAB international conference.</p>
-            <ul>
-              <li><b>Key Features:</b> video streaming, behavior recognition, edge computing, cloud services</li>
-              <li><b>Frameworks and Platforms:</b> Raspberry Pi, OpenCV, TensorFlow, TensorFlow Lite, AWS</li>
-              <li><b>Deployment:</b> <a href="/https://www.farm.ntu.edu.tw/page/about/index.aspx?kind=151" target="_blank" rel="noopener noreferrer">NTU's experimental dairy farm</a></li>
-            </ul>
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            Inspired by the need for automated livestock monitoring and the potential of edge computing in agriculture, we developed our comprehensive AIoT system deployed at NTU's experimental dairy farm. This system has been featured in multiple research publications and has been successfully monitoring cattle behavior for over a year. To read more about the specific technical implementation and system architecture, please read our paper presented at ISMAB 2023.
+          </p>
+
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            Our AIoT system aims to improve livestock welfare and farm management efficiency by providing real-time behavioral analysis and health monitoring through computer vision and edge computing technologies. The system uses behavioral recognition algorithms to identify patterns in cattle movement, feeding behavior, and social interactions, providing farmers with immediate insights into animal health and wellbeing. By processing data at the edge and synchronizing with cloud services, our system is designed to help farmers make data-driven decisions and ensure optimal animal care through the power of AI and IoT.
+          </p>
+
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            Based on the data gathered from our deployment at NTU's experimental farm, we have been able to show that our AIoT system achieves over 95% accuracy in behavior recognition tasks. Not only that, but we have seen that the system can process and analyze video streams in real-time with minimal latency, which is well above the performance requirements for practical farm applications! Combine that with the fact that over 90% of detected behavioral anomalies correlate with actual health issues, and our AIoT system has already been able to help farmers identify and address potential problems before they become serious.
+          </p>
+
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            The computer vision and machine learning techniques used within our AIoT system were developed in collaboration with the Department of Animal Science and Technology at National Taiwan University. This collaboration provided us with deep domain expertise in livestock behavior, animal welfare standards, and practical farm management needs. Our partners advised us on which behavioral patterns are most indicative of health issues, what types of monitoring data are most valuable for farmers, and how to maximize both system reliability and practical utility within the unique context of agricultural environments.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">...And More!</h2>
+
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            The techniques we have been developing for the AIoT Livestock Monitoring Project can be used in many ways to help farmers and researchers form better understanding of animal behavior and welfare. We're incredibly excited about the many directions we can take this project in to help more agricultural operations, and we know we've only just scratched the surface of what's possible with AI and IoT in agriculture. If you have any ideas or would like to collaborate, please contact us at polinnchen@gmail.com.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">In This Project, I...</h2>
+
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Architected Edge-Cloud ML System using Flask and AWS (IoT Core, S3, Athena); built CI/CD pipeline with GitHub Actions for over-the-air (OTA) software updates and IoT Core/MQTT for automated performance profiling.
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Drove resource-constrained deployment on Raspberry Pi with LiteRT/TFLite; quantified performance tradeoffs across
+            inference optimization strategies, achieving 63% latency reduction and 40% RAM cut for real-time, low-power operation
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Delivered QuickSight reporting framework by collaborating with domain experts, saving 84% operational labor overhead
+            </b>
             
-
-          </header>
+          </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Published research as 1-st author at top-tier bioengineering conference ISMAB 2024 (see <a href="/projects/1_publication" target="_blank" rel="noopener noreferrer">publication page</a>)
+            </b>
+          </p>
 
           <article>
             
-            <br>
-            <div class="ml-6 mr-6 max-w-screen-lg mx-auto text-center" style="display: flex; justify-content: center;">
-              <img class="img-fluid rounded z-depth-1" src="/assets/img/1_publication_ra_2.jpeg" style="max-width: 80%; display: block;">
-            </div>
-            <div class="caption" style="display: flex; justify-content: center;">
-              Visualization of Behavior Monitoring during a Week.</b>
-            </div>
             <br>
 
 
@@ -235,9 +383,9 @@
                 </a>
               </div>
           </div>
-          <div class="caption">
-            (1) Embedded System Installation / (2) Dairy Calf Barn at NTU's Experimental Dairy Farm / (3) Top-Down Image Acquisition
-          </div>
+          <p style="text-align: center; font-size: 1.3rem; font-weight: 400; line-height: 1.1; margin-bottom: 25px;">
+            (1) Embedded System Installation (2) Dairy Calf Barn at NTU's Experimental Dairy Farm (3) Top-Down Image Acquisition
+          </p>
           
 
 

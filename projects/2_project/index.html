@@ -73,21 +73,17 @@
 
               <!-- About -->
               <li class="nav-item ">
-                <a class="nav-link" href="/">about</a>
+                <a class="nav-link" href="/">About</a>
               </li>
               
-              <!-- Blog -->
+              <!-- CV -->
               <li class="nav-item ">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/cv/">CV</a>
               </li>
 
+              <!-- Projects -->
               <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-
-              <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/projects/">projects</a>
+                <a class="nav-link" href="/projects/">Projects</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -104,17 +100,114 @@
     </header>
 
      <!-- Content -->
-     <div class="container mt-5">
-      <!-- page.html -->
-        <div class="post">
+     <div class="container-fluid p-0">
+      <!-- Hero Section with Background Image -->
+      <div class="hero-section" style="
+        background-image: url('/assets/img/2_project_advantech_1.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 50vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <!-- Overlay with grayscale filter -->
+        <div class="hero-overlay" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          filter: grayscale(100%);
+        "></div>
+        
+        <!-- Content -->
+        <div class="hero-content text-left text-white" style="
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+          padding: 0 20px;
+        ">
+          <h4 class="hero-title" style="
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          color: white; 
+        ">Industry</h4>
+          <h3 class="hero-title" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">High-Throughput Edge AI Inference Engine for Anomaly Detection and Alarm System in Retail Environments</h3>
+          <h3 class="hero-title" style="
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">#Computer-Vision #ML-Systems #AI-Inference-Optimization</h3>
 
-          <header class="post-header">
-            <h2 class="post-title">An Embedded Vision-based Alarm System in Retail</h2>
-            <!-- <h5 class="slab-text"><a href="/assets/pdf/Advantech_Presentation.pdf" target="_blank" rel="noopener noreferrer">Presentation</a> • <a href="/assets/mp4/Advantech_Demo.mp4" target="_blank" rel="noopener noreferrer">Demo</a></h5> -->
-            <h5 class="slab-text">
-              <a href="javascript:void(0);" onclick="togglePDF()">Presentation</a> • 
-              <a href="javascript:void(0);" onclick="toggleVideo()">Demo</a>
-            </h5>
+          
+          
+          <style>
+            .hero-link:hover {
+              color: var(--global-theme-color) !important;
+            }
+            
+            @media (max-width: 768px) {
+              .hero-title {
+                font-size: 2.5rem !important;
+              }
+              .hero-links {
+                font-size: 2rem !important;
+              }
+              .hero-section {
+                background-attachment: scroll !important;
+              }
+            }
+            @media (max-width: 480px) {
+              .hero-title {
+                font-size: 2rem !important;
+              }
+              .hero-links {
+                font-size: 0.9rem !important;
+              }
+            }
+          </style>
+          
+          <div class="hero-links" style="
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: left;
+          ">
+            <a href="javascript:void(0);" onclick="togglePDF()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 0px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Presentation |</a>
+            <a href="javascript:void(0);" onclick="toggleVideo()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 3px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="container mt-5">
+        <div class="post">
             
             <div id="pdfContainer" style="display:none;">
               <iframe src="/assets/pdf/Advantech_Presentation.pdf" width="800" height="500">
@@ -156,15 +249,100 @@
               }
             </script>
 
-            <br>
-            <p>This project was inspired by the retail loss caused by self-checkout systems nowadays. With this system, abnormal behaviors in retail stores can be automatically detected and recorded.</p>
-            <ul>
-              <li><b>Key Features:</b> real-time computing, anomaly detection, barcode processing, web services, LED control</li>
-              <li><b>Frameworks/Platforms:</b> Intel CPUs/iGPUs, OpenCV, TensorFlow, OpenVINO C++ runtime</li>
-              <li><b>Deployment:</b> existing self-checkout systems (on existing IPC products)</li>
-            </ul>
+          <!-- PDF and Video Containers -->
+          <div id="pdfContainer" style="display:none;">
+            <iframe src="/assets/pdf/Advantech_Presentation.pdf" width="800" height="500">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/Advantech_Presentation.pdf">Download PDF</a>.
+            </iframe>
+          </div>
+          
+          <div id="videoContainer" style="display:none;">
+            <video width="560" height="360" controls preload="auto">
+              <source src="/assets/mp4/Advantech_Demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+          <script>
+            function togglePDF() {
+              var pdfContainer = document.getElementById('pdfContainer');
+              var videoContainer = document.getElementById('videoContainer');
+              
+              if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+                videoContainer.style.display = 'none';
+              } else {
+                pdfContainer.style.display = 'none';
+              }
+            }
+          
+            function toggleVideo() {
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              
+              if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+                pdfContainer.style.display = 'none';
+              } else {
+                videoContainer.style.display = 'none';
+              }
+            }
+          </script>
 
-          </header>
+          <!-- Project Description -->
+          <!-- <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            <strong>Credit:</strong> Me, Advantech Co. Ltd.
+          </p> -->
+          <br>
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin-bottom: 30px;">The Beginning: Embedded Vision-based Alarm System</h2>
+          
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            Our first major industry project, known simply as the Embedded Vision-based Alarm System, was a comprehensive edge computing solution that monitored retail environments using computer vision and AI optimization technologies. It was targeted at retail loss prevention and was used to demonstrate that embedding optimized AI inference within a real-time monitoring system can drastically increase detection accuracy and system reliability in commercial environments. It was an incredibly promising result that showed that heterogeneous AI acceleration could provide mission-critical performance for retail security applications.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">Building Optimized AI Inference Systems for Real-time Anomaly Detection</h2>
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            Inspired by the retail loss caused by self-checkout systems and the potential of edge AI optimization, we developed our comprehensive embedded vision system deployed in retail environments. This system has been featured in multiple industry presentations and has been successfully detecting anomalies in real-time for over 200+ production trials. To read more about the specific technical implementation and performance optimization, please view our presentation and demo materials.
+          </p>
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            Our embedded vision system aims to improve retail security and loss prevention by providing real-time anomaly detection and behavioral analysis through optimized computer vision and edge computing technologies. The system uses advanced CNN architectures with multi-modal input channels to identify patterns in customer behavior, barcode processing, and suspicious activities, providing store managers with immediate insights into potential security threats. By leveraging Intel CPU/iGPU heterogeneous acceleration and OpenVINO optimization, our system is designed to help retailers prevent losses and ensure store security through the power of optimized AI inference.
+          </p>
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            Based on the data gathered from our deployment in retail environments, we have been able to show that our embedded vision system achieves 2.7× faster inference and 2.2× end-to-end speedup compared to baseline implementations. Not only that, but we have seen that the system maintains 99% precision with only 2% false alarm rate, which is well above the performance requirements for mission-critical retail applications! Combine that with the fact that our containerized deployment pipeline successfully manages 6-8 device clusters with high-throughput API services, and our embedded vision system has already been able to help retailers prevent losses and maintain security in real-world environments.
+          </p>
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            The computer vision and AI optimization techniques used within our embedded vision system were developed in collaboration with Advantech Co. Ltd. This collaboration provided us with deep expertise in edge computing hardware, AI acceleration frameworks, and practical retail deployment requirements. Our partners advised us on which optimization techniques are most effective for heterogeneous computing, what types of inference acceleration provide the best performance gains, and how to maximize both system reliability and computational efficiency within the unique context of retail environments.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">...And More!</h2>
+
+          <p style="font-weight: 400; font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px;">
+            The techniques we have been developing for the Embedded Vision-based Alarm System can be used in many ways to help retailers and security professionals form better understanding of customer behavior and potential threats. We're incredibly excited about the many directions we can take this project in to help more retail operations, and we know we've only just scratched the surface of what's possible with optimized AI inference in edge computing. If you have any ideas or would like to collaborate, please contact us at polinnchen@gmail.com.
+          </p>
+
+          <h2 style="color: #333; font-size: 2rem; font-weight: 700; margin: 40px 0 30px 0;">In This Project, I...</h2>
+
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Optimized heterogeneous AI inference on Intel CPU/iGPU by leveraging OpenVINO/VNNI acceleration; achieved 2.7×
+            faster inference and 2.2× E2E speedup, establishing a new performance standard for a novel CNN architecture
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Designed high-reliability anomaly detection by augmenting vision models via multi-modal input channels; demonstrated
+            mission-critical system reliability (99% precision, 2% false alarm rate) across 200+ production trials
+            </b>
+            </p>
+          <p style="font-size: 1.3rem; font-weight: 400; line-height: 1.5; margin-bottom: 25px;">
+            <b>- Standardized edge deployment pipeline by containerizing and delivering 10+ supporting modules (APIs/debug/telemetry)
+            into the C++ inference engine, enabling high-throughput API services and management for decentralized 6-8 device clusters
+            </b>
+            </p>
           
           
 

@@ -73,21 +73,17 @@
 
               <!-- About -->
               <li class="nav-item ">
-                <a class="nav-link" href="/">about</a>
+                <a class="nav-link" href="/">About</a>
               </li>
               
-              <!-- Blog -->
+              <!-- CV -->
               <li class="nav-item ">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/cv/">CV</a>
               </li>
 
+              <!-- Projects -->
               <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-
-              <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/projects/">projects</a>
+                <a class="nav-link" href="/projects/">Projects</a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -104,100 +100,211 @@
     </header>
 
      <!-- Content -->
-     <div class="container mt-5">
-      <!-- page.html -->
-        <div class="post">
+     <div class="container-fluid p-0">
+      <!-- Hero Section with Background Image -->
+      <div class="hero-section" style="
+        background-image: url('/assets/img/3_project_google_hps.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 50vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+        <!-- Overlay with grayscale filter -->
+        <div class="hero-overlay" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          filter: grayscale(100%);
+        "></div>
+        
+        <!-- Content -->
+        <div class="hero-content text-left text-white" style="
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+          padding: 0 20px;
+        ">
+          <h4 class="hero-title" style="
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          color: white; 
+        ">Society</h4>
+          <h3 class="hero-title" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">GREENIFY: Your Recycle Mentor - An Autonomous Recycling Bin Born for Environmental Education & Social Good</h3>
+          <h3 class="hero-title" style="
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: white; 
+          ">#Computer-Vision #Embedded-ML #Sustainability</h3>
 
-          <header class="post-header">
-            <h2 class="post-title">GREENIFY: An Intelligent Educational Recycling Bin</h2>
-
-
-            <h5 class="slab-text">
-              <a href="javascript:void(0);" onclick="togglePDF()">Poster</a> • 
-              <a href="javascript:void(0);" onclick="togglePDF2()">Presentation</a> • 
-              <a href="javascript:void(0);" onclick="toggleVideo()">Demo</a>
-            </h5>
-            
-            <div id="pdfContainer" style="display:none;">
-              <iframe src="/assets/pdf/Google_HPS_Poster.pdf" width="800" height="500">
-                Your browser does not support PDFs. Please download the PDF to view it: 
-                <a href="/assets/pdf/Google_HPS_Poster.pdf">Download PDF</a>.
-              </iframe>
-            </div>
-
-            <div id="pdfContainer2" style="display:none;">
-              <iframe src="/assets/pdf/Google_HPS_Presentation.pdf" width="800" height="500">
-                Your browser does not support PDFs. Please download the PDF to view it: 
-                <a href="/assets/pdf/Google_HPS_Presentation.pdf">Download PDF</a>.
-              </iframe>
-            </div>
-            
-            <div id="videoContainer" style="display:none;">
-              <video width="640" height="360" controls preload="auto">
-                <source src="/assets/mp4/Google_HPS_Demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            
-            <script>
-              function togglePDF() {
-                var pdfContainer = document.getElementById('pdfContainer');
-                var videoContainer = document.getElementById('videoContainer');
-                
-                if (pdfContainer.style.display === 'none') {
-                  pdfContainer.style.display = 'block';
-                  videoContainer.style.display = 'none'; // Hide video if it's visible
-                } else {
-                  pdfContainer.style.display = 'none';
-                }
-              }
-              function togglePDF2() {
-                var pdfContainer = document.getElementById('pdfContainer2');
-                var videoContainer = document.getElementById('videoContainer');
-                
-                if (pdfContainer.style.display === 'none') {
-                  pdfContainer.style.display = 'block';
-                  videoContainer.style.display = 'none'; // Hide video if it's visible
-                } else {
-                  pdfContainer.style.display = 'none';
-                }
-              }
-            
-              function toggleVideo() {
-                var videoContainer = document.getElementById('videoContainer');
-                var pdfContainer = document.getElementById('pdfContainer');
-                
-                if (videoContainer.style.display === 'none') {
-                  videoContainer.style.display = 'block';
-                  pdfContainer.style.display = 'none'; // Hide PDF if it's visible
-                } else {
-                  videoContainer.style.display = 'none';
-                }
-              }
-            </script>
-            
-
-
-            <br>
-            <p>
-              Our goal was to promote environmental sustainability in schools for young students, making recycling fun and interactive.
-            </p>
-              
-            <p>
-              During the <a href="https://www.linkedin.com/feed/update/urn:li:activity:7064912906336825344/" target="_blank" rel="noopener noreferrer">2023 Google Hardware Sprint</a>, I worked as a backend engineer, focusing on efficient neural network inference on embedded hardware for waste classification, the core technology of our project. 
-              I also handled software-hardware integration and backend-frontend communication to ensure our AI components operate smoothly with the physical recycling bin.
-            </p>
-            
-            <p>
-              We built an embedded intelligent educational recycling bin that combined AI-driven waste sorting with immersive storylines, where users’ choices shaped different outcomes. Working closely with hardware engineers, front-end developers, UI/UX designers, and industrial designers, we captured students' attention and effectively encouraged better habits in a playful, impactful way.
-            </p>
-            <p>
-              The project was awarded as "Best Product of the Year" as well as "Product for Social Good" by Google Taiwan.
-            </p>
-            
-
-          </header>
           
+          
+          <style>
+            .hero-link:hover {
+              color: var(--global-theme-color) !important;
+            }
+            
+            @media (max-width: 768px) {
+              .hero-title {
+                font-size: 2.5rem !important;
+              }
+              .hero-links {
+                font-size: 2rem !important;
+              }
+              .hero-section {
+                background-attachment: scroll !important;
+              }
+            }
+            @media (max-width: 480px) {
+              .hero-title {
+                font-size: 2rem !important;
+              }
+              .hero-links {
+                font-size: 0.9rem !important;
+              }
+            }
+          </style>
+          
+          <div class="hero-links" style="
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: left;
+          ">
+            <a href="javascript:void(0);" onclick="togglePDF()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 0px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Poster |</a>
+            <a href="javascript:void(0);" onclick="togglePDF2()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 3px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Presentation |</a>
+            <a href="javascript:void(0);" onclick="toggleVideo()" class="hero-link" style="
+              color: white;
+              text-decoration: none;
+              margin: 0 3px;
+              font-weight: 500;
+              transition: color 0.3s ease;
+            ">Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="container mt-5">
+        <div class="post">
+          <!-- PDF and Video Containers -->
+          <div id="pdfContainer" style="display:none;">
+            <iframe src="/assets/pdf/Google_HPS_Poster.pdf" width="800" height="500">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/Google_HPS_Poster.pdf">Download PDF</a>.
+            </iframe>
+          </div>
+
+          <div id="pdfContainer2" style="display:none;">
+            <iframe src="/assets/pdf/Google_HPS_Presentation.pdf" width="800" height="500">
+              Your browser does not support PDFs. Please download the PDF to view it: 
+              <a href="/assets/pdf/Google_HPS_Presentation.pdf">Download PDF</a>.
+            </iframe>
+          </div>
+          
+          <div id="videoContainer" style="display:none;">
+            <video width="640" height="360" controls preload="auto">
+              <source src="/assets/mp4/Google_HPS_Demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+          <script>
+            function togglePDF() {
+              var pdfContainer = document.getElementById('pdfContainer');
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              
+              if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+                videoContainer.style.display = 'none';
+                pdfContainer2.style.display = 'none';
+              } else {
+                pdfContainer.style.display = 'none';
+              }
+            }
+            function togglePDF2() {
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              
+              if (pdfContainer2.style.display === 'none') {
+                pdfContainer2.style.display = 'block';
+                videoContainer.style.display = 'none';
+                pdfContainer.style.display = 'none';
+              } else {
+                pdfContainer2.style.display = 'none';
+              }
+            }
+          
+            function toggleVideo() {
+              var videoContainer = document.getElementById('videoContainer');
+              var pdfContainer = document.getElementById('pdfContainer');
+              var pdfContainer2 = document.getElementById('pdfContainer2');
+              
+              if (videoContainer.style.display === 'none') {
+                videoContainer.style.display = 'block';
+                pdfContainer.style.display = 'none';
+                pdfContainer2.style.display = 'none';
+              } else {
+                videoContainer.style.display = 'none';
+              }
+            }
+          </script>
+
+          <!-- Project Description -->
+          <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
+            <strong>Credit:</strong>
+            Me, Google Taiwan, 2023 Google Hardware Product Sprint
+          </p>
+          <br>
+          
+          <br>
+          <p>
+            Our goal was to promote environmental sustainability in schools for young students, making recycling fun and interactive.
+          </p>
+            
+          <p>
+            During the <a href="https://www.linkedin.com/feed/update/urn:li:activity:7064912906336825344/" target="_blank" rel="noopener noreferrer">2023 Google Hardware Sprint</a>, I worked as a backend engineer, focusing on efficient neural network inference on embedded hardware for waste classification, the core technology of our project. 
+            I also handled software-hardware integration and backend-frontend communication to ensure our AI components operate smoothly with the physical recycling bin.
+          </p>
+          
+          <p>
+            We built an embedded intelligent educational recycling bin that combined AI-driven waste sorting with immersive storylines, where users' choices shaped different outcomes. Working closely with hardware engineers, front-end developers, UI/UX designers, and industrial designers, we captured students' attention and effectively encouraged better habits in a playful, impactful way.
+          </p>
+          <p>
+            The project was awarded as "Best Product of the Year" as well as "Product for Social Good" by Google Taiwan.
+          </p>
+          
+
           <br>
           <!-- <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAF3KfQrGjE/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"> </iframe> -->
           <div style="display: flex; justify-content: center;">

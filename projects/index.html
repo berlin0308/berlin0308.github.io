@@ -73,21 +73,17 @@
 
               <!-- About -->
               <li class="nav-item ">
-                <a class="nav-link" href="/">about</a>
+                <a class="nav-link" href="/">About</a>
               </li>
               
-              <!-- Blog -->
+              <!-- CV -->
               <li class="nav-item ">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/cv/">CV</a>
               </li>
 
-              <li class="nav-item ">
-                <a class="nav-link" href="/cv/">cv</a>
-              </li>
-
-              <!-- Other pages -->
+              <!-- Projects -->
               <li class="nav-item active">
-                <a class="nav-link" href="/projects/">projects<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/projects/">Projects<span class="sr-only">(current)</span></a>
               </li>
 
               <!-- Toogle theme mode -->
@@ -109,281 +105,232 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">projects</h1>
-            <h5 class="slab-text">
-              Computer Vision • Robotics • IoT
-            </h5>
+            <h1 class="post-title">Projects</h1>
+            <h4 class="slab-text">
+              #Computer-Vision #Embedded-Systems #Robotics
+            </h4>
             <br>
-            <p>I like building things. Some are practical, some are just for fun, and some are questionable ideas that somehow worked out.</p>
-            <p>Whether it is computer vision, robotics, IoT, or some wild mix of the three, I love exploring how machines can perceive the world, making tiny devices into unexpectedly powerful, and watching AI thrives (or stumbles) in everyday scenarios.</p>
+            <!-- <p>I like building things. Some are practical, some are just for fun, and some are questionable ideas that somehow worked out.</p> -->
+            <!-- <p>Whether it is computer vision, robotics, IoT, or some wild mix of the three, I love exploring how machines can perceive the world, making tiny devices into unexpectedly powerful, and watching AI thrives (or stumbles) in everyday scenarios.</p> -->
             <!-- <p >My projects primarily lie in <b>Computer Vision, AIoT,</b> and <b>Robotics. </b></p> -->
-            <!-- <p>Smart agriculture, intelligent retail, and education are just a few playgrounds where I turn ideas into reality -- sometimes they solve real-world problems, other times they just make life a little more interesting. Either way, I’m always up for the next challenge.</p> -->
+            <!-- <p>Smart agriculture, intelligent retail, and education are just a few playgrounds where I turn ideas into reality -- sometimes they solve real-world problems, other times they just make life a little more interesting. Either way, I'm always up for the next challenge.</p> -->
+            <br>
           </header>
 
           <article>
                           <!-- pages/projects.md -->
               <div class="projects">
                 <!-- Display categorized projects -->
-                <h2 class="category"> projects</h2>
+                <!-- <h2 class="category"> projects</h2> -->
                 <!-- Generate cards for each project -->
-                <div class="grid">
-              <!-- _includes/projects.html -->
-              <div class="grid-sizer"></div>
+                <div class="project-grid">
 
               <style>
-                /* Ensure the <a> element is a block-level element */
-                  a {
-                  display: block;
-                  width: 100%;
-                  height: 100%;
+                .project-grid {
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 0;
+                  margin-top: 0;
+                  width: 100vw;
+                  margin-left: calc(-50vw + 50%);
                 }
 
-                /* Make sure the <figure> fills its parent <a> */
-                figure {
-                  margin: 0;
-                  padding: 0;
-                  width: 100%;
-                  height: 100%;
+                .project-card {
+                  background: white;
+                  border-radius: 0;
+                  overflow: hidden;
+                  box-shadow: none;
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  text-decoration: none;
+                  color: inherit;
+                  display: flex;
+                  flex-direction: column;
                 }
 
-                .card {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                display: flex; /* Use flex to center the content */
-                flex-direction: column; /* Ensure the title is centered in the card */
-                justify-content: center;
-                align-items: center;
-                background-color: var(--global-card-bg-color);
-                transition: all 0.3s ease;
-              }
+                .project-card:hover {
+                  transform: translateY(-5px);
+                  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+                  text-decoration: none;
+                  color: inherit;
+                }
 
-                /* The image-container should fill the entire space of the figure */
-                .image-container {
-                  position: relative;
-                  width: 100% !important;
-                  height: 100% !important;
+                .project-card:hover .project-image {
+                  filter: grayscale(0%);
+                }
+                
+                .project-card:hover .project-title, .project-card:hover .project-description, .project-card:hover .project-category{
+                  color: var(--global-theme-color) !important;
+                }
+
+                .project-image {
+                  width: 100%;
+                  aspect-ratio: 1 / 1;
                   background-size: cover;
                   background-position: center;
-                  display: block;
-                  transition: opacity 0.3s ease;
+                  position: relative;
+                  filter: grayscale(30%);
+                  transition: filter 0.05s ease;
                 }
 
-                /* Hide the image as we use background-image */
-                .image-container img {
-                  display: none;
+                .project-content {
+                  padding: 20px;
+                  background: white;
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
                 }
 
-                /* Title that will appear over the image */
-                .card-title {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  margin: 0;
-                  transform: translate(-50%, -50%);
-                  color: transparent; /* Initially set the text to be invisible */
-                  font-size: 1.4rem;
-                  opacity: 0;
-                  transition: opacity 0.3s ease, color 0.3s ease;
-                  padding: 0;
-                  white-space: normal;
-                  word-wrap: break-word;
-                  width: 100%;
-                  padding: 0 20px;
-                  text-align: center;
+                .project-category {
+                  font-size: 0.9rem;
+                  color: #666;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                  margin-bottom: 8px;
                 }
 
-                /* Create a black overlay using the ::before pseudo-element */
-                .card .image-container::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  padding: 0;
-                  width: 100%;
-                  height: 100%;
-                  background-color: black;
-                  opacity: 0; /* Initially invisible */
-                  transition: opacity 0.3s ease; /* Transition for the overlay effect */
+                .project-title {
+                  font-size: 1.3rem;
+                  font-weight: 700;
+                  color: #333;
+                  margin-bottom: 12px;
+                  line-height: 1.3;
                 }
 
-                /* Hover effect: change image opacity to darken it and text color to white */
-                .card:hover .image-container::before {
-                  opacity: 0.6; /* Make the black overlay visible */
+                .project-description {
+                  font-size: 1rem !important;
+                  color: #8a8a8a !important;
+                  font-weight: 300 !important;
+                  line-height: 1.5;
+                  flex: 1;
+                  margin-bottom: 8px !important;
                 }
 
-                .card:hover .card-title {
-                  opacity: 0.8; /* Show the title */
-                  color: white !important; /* Change the text color to white */
+                @media (max-width: 1200px) {
+                  .project-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                  }
                 }
 
-                .grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); /* 每行 3 个卡片 */
-                gap: 20px; /* 卡片间距 */
-                margin-top: 20px; /* 可根据需要调整顶部间距 */
-              }
+                @media (max-width: 900px) {
+                  .project-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                  }
+                }
 
-              .grid-item {
-                position: relative;
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                background-color: #f4f4f4; /* 如果需要背景色，可以设置 */
-                overflow: hidden;
-              }
-
-
-
+                @media (max-width: 600px) {
+                  .project-grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
               </style>
 
-              <div class="grid-item">
-                <a href="/projects/1_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/1_project_bblab_ra_1.jpg');">
-                        <h4 class="card-title">AIoT for Vision-based Livestock Monitoring</h4>
-                      </div>
-                    </figure>
+              <a href="/projects/1_project/" class="project-card">
+                <div class="project-image" style="background-image: url('/assets/img/1_project_bblab_ra_1.jpg');"></div>
+                <div class="project-content">
+                  <div class="project-category">Research</div>
+                  <h3 class="project-title">An Edge-Cloud AIoT System for Vision-based Livestock Monitoring:
+                    Collaborating with Dept. of Animal Science and Technology & NTU's Experimental Farm</h3>
+                  <p class="project-description">#ML-Systems #Embedded-ML #Agriculture</p>
+                  <p class="project-description">Our first major research project, known simply as the AIoT Livestock Monitoring System, was a comprehensive edge-to-cloud framework that monitored dairy cattle behavior using computer vision and IoT technologies. It was targeted at ...</p>
+                </div>
+              </a>
+
+
+              <a href="/projects/2_project/" class="project-card">
+                <div class="project-image" style="background-image: url('/assets/img/2_project_advantech.jpeg');"></div>
+                <div class="project-content">
+                  <div class="project-category">Industry</div>
+                  <h3 class="project-title">High-Throughput Edge AI Inference Engine for Anomaly Detection and Alarm System in Retail Environments</h3>
+                  <p class="project-description">#Computer-Vision #ML-Systems #AI-Inference-Optimization #Retail</p>
+                  <p class="project-description">Inspired by the retail loss caused by self-checkout systems and the potential of edge AI optimization, we developed our comprehensive embedded vision system deployed in retail environments. This system has been featured in multiple industry presentations and has been successfully detecting ...</p>
+                </div>
+              </a>
+
+
+              <a href="/projects/3_project/" class="project-card">
+                <div class="project-image" style="background-image: url('/assets/img/3_project_google_hps.jpg');"></div>
+                <div class="project-content">
+                  <div class="project-category">Society</div>
+                  <h3 class="project-title">GREENIFY: Your Recycle Mentor - An Autonomous Recycling Bin Born for Environmental Education & Social Good</h3>
+                  <p class="project-description">#Computer-Vision #Embedded-ML #Sustainability</p>
+                  <p class="project-description">Our goal was to promote environmental sustainability in schools for young students, making recycling fun and interactive.
+                    During the 2023 Google Hardware Sprint, I worked as a backend engineer, focusing on efficient neural network inference on embedded hardware for waste classification ...</p>
                   </div>
                 </a>
-              </div>
-
-
-              <div class="grid-item">
-                <a href="/projects/2_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/2_project_advantech.jpeg');">
-                        <h4 class="card-title">An Embedded AI Alarm System in Retail</h4>
-                      </div>
-                    </figure>
+                
+                
+                
+                <a href="/projects/4_project/" class="project-card">
+                  <div class="project-image" style="background-image: url('/assets/img/7_project_field_robot_2022.jpg');"></div>
+                  <div class="project-content">
+                    <div class="project-category">Competition</div>
+                    <h3 class="project-title">ARUI-II: A Vision-Driven Field Robot</h3>
+                    <p class="project-description">#Robotics #Computer-Vision #HPC #Perception #Navigation</p>
+                    <p class="project-description">Led development of an intelligent agricultural robot with stereo vision and obstacle avoidance for autonomous field operations.</p>
                   </div>
                 </a>
-              </div>
-
-
-              <div class="grid-item">
-                <a href="/projects/3_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/3_project_google_hps.jpg');">
-                        <h4 class="card-title">GREENIFY: An Intelligent Educational Recycling Bin</h4>
-                      </div>
-                    </figure>
+                
+                <a href="/projects/6_project/" class="project-card">
+                  <div class="project-image" style="background-image: url('/assets/img/6_project_field_robot_2021_3.jpeg');"></div>
+                  <div class="project-content">
+                    <div class="project-category">Competition</div>
+                    <h3 class="project-title">ARUI-I: A Vision-Driven Field Robot</h3>
+                    <p class="project-description">#Robotics #Computer-Vision #HPC #Perception #Navigation</p>
+                    <p class="project-description">Developed the first generation of autonomous field robots with computer vision capabilities for agricultural applications.</p>
                   </div>
                 </a>
-              </div>
-
-              
-
-              <div class="grid-item">
-                <a href="/projects/4_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/7_project_field_robot_2022.jpg');">
-                        <h4 class="card-title">ARUI-II: A Vision-Driven Field Robot</h4>
-                      </div>
-                    </figure>
+                
+                <a href="/projects/6_project/" class="project-card">
+                  <div class="project-image" style="background-image: url('/assets/img/8_project_mechatronics.jpg');"></div>
+                  <div class="project-content">
+                    <div class="project-category">Competition</div>
+                    <h3 class="project-title">An Agile Vacuum Robot</h3>
+                    <p class="project-description">#Robotics #Microcontrollers #Sensors #Perception</p>
+                    <p class="project-description">Designed and built an intelligent cleaning robot with advanced navigation and obstacle avoidance capabilities.</p>
                   </div>
                 </a>
-              </div>
-
-              <div class="grid-item">
-                <a href="/projects/4_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/6_project_field_robot_2021_3.jpeg');">
-                        <h4 class="card-title">ARUI-I: A Vision-Driven Field Robot</h4>
-                      </div>
-                    </figure>
+                
+                <a href="/projects/7_project/" class="project-card">
+                  <div class="project-image" style="background-image: url('/assets/img/7_project_4.png');"></div>
+                  <div class="project-content">
+                    <div class="project-category">Research</div>
+                    <h3 class="project-title">Personalized Styles and Characters in Text-to-Image Diffusion</h3>
+                    <p class="project-description">#Vision-Language-Models #Generative-AI #PEFT</p>
+                    <p class="project-description">Redesigned diffusion pipeline with ControlNet and IP-Adapter for efficient multi-concept personalization, outperforming existing methods.</p>
                   </div>
                 </a>
-              </div>
+                
+                <a href="/projects/8_project/" class="project-card">
+                  <div class="project-image" style="background-image: url('/assets/img/4_project_ntu_course_project.jpeg');"></div>
+                  <div class="project-content">
+                    <div class="project-category">Academic</div>
+                    <h3 class="project-title">Course Projects at NTU</h3>
+                    <p class="project-description">#Image-Processing #Deep-Learning #Computer-Vision</p>
+                  <p class="project-description">Various academic projects completed during undergraduate studies, showcasing practical applications of engineering principles.</p>
+                </div>
+              </a>
 
-              <div class="grid-item">
-                <a href="/projects/6_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/8_project_mechatronics.jpg');">
-                        <h4 class="card-title">An Agile Vacuum Robot</h4>
-                      </div>
-                    </figure>
-                  </div>
-                </a>
-              </div>
+              <a href="/projects/1_publication/" class="project-card">
+                <div class="project-image" style="background-image: url('/assets/img/1_publication_ra_1.png');"></div>
+                <div class="project-content">
+                  <div class="project-category">Publication</div>
+                  <h3 class="project-title">Efficient AIoT Framework for Vision-Based Behavior Monitoring in Livestock</h3>
+                  <p class="project-description"></p>
+                </div>
+              </a>
 
-              <div class="grid-item">
-                <a href="/projects/7_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/7_project_4.png');">
-                        <h4 class="card-title">Personalized Styles and Characters in Text-to-Image Diffusion</h4>
-                      </div>
-                    </figure>
-                  </div>
-                </a>
-              </div>
-
-              <div class="grid-item">
-                <a href="/projects/8_project/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/4_project_ntu_course_project.jpeg');">
-                        <h4 class="card-title">Course Projects at NTU</h4>
-                      </div>
-                    </figure>
-                  </div>
-                </a>
-              </div>
+              <a href="/projects/2_publication/" class="project-card">
+                <div class="project-image" style="background-image: url('/assets/img/5_project_bblab_ur.jpeg');"></div>
+                <div class="project-content">
+                  <div class="project-category">Publication</div>
+                  <h3 class="project-title">Video-Based Behavioral Assessment in Dairy Calves using Deep Learning Approach</h3>
+                  <p class="project-description"></p>
+                </div>
+              </a>
 
 
             </div>
           </div>
-
-          </article>
-
-        </div>
-
-
-
-        <div class="post">
-
-
-          <article>
-                          <!-- pages/projects.md -->
-              <div class="projects">
-                <!-- Display categorized projects -->
-                <h2 class="category">publications</h2>
-                <!-- Generate cards for each project -->
-                <div class="grid">
-              <!-- _includes/projects.html -->
-              <div class="grid-sizer"></div>
-
-              <div class="grid-item">
-                <a href="/projects/1_publication/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/1_publication_ra_1.png');">
-                        <h4 class="card-title">An Efficient AIoT Framework for Image-Based Behavior Monitoring
-                        </h4>
-                      </div>
-                    </figure>
-                  </div>
-                </a>
-              </div>
-
-
-              <div class="grid-item">
-                <a href="/projects/2_publication/">
-                  <div class="card hoverable">
-                    <figure>
-                      <div class="image-container" style="background-image: url('/assets/img/5_project_bblab_ur.jpeg');">
-                        <h4 class="card-title">Behavior Recognition and Analysis in Dairy Calves</h4>
-                      </div>
-                    </figure>
-                  </div>
-                </a>
-              </div>
 
           </article>
 
